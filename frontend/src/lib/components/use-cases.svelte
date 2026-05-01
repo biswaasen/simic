@@ -9,7 +9,7 @@
 
 <section class="cases" id="cases">
   <div class="inner">
-    <div class="head">
+    <div class="head" data-reveal>
       <span class="label">// USE CASES</span>
       <h2>What it <em>replaces</em>.</h2>
       <p class="lead">
@@ -18,7 +18,7 @@
       </p>
     </div>
 
-    <div class="grid">
+    <div class="grid" data-reveal-stagger>
       {#each cases as c (`${c.tag}-${c.title}`)}
         <article class="card" class:dark={c.dark}>
           <div class="card-top">

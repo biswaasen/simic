@@ -3,7 +3,7 @@
     <img class="bg" src="/hero_background.avif" alt="" />
     <div class="grade"></div>
 
-    <div class="content">
+    <div class="content enter">
       <h1>
         Build the <em>system</em><br />that runs your business.
       </h1>
@@ -42,8 +42,9 @@
   }
   .bg {
     position: absolute; left: 0; right: 0; bottom: 0;
-    width: 100%; height: 65%; object-fit: cover; object-position: center 35%;
+    width: 100%; height: 75%; object-fit: cover; object-position: center 35%;
     z-index: 0; opacity: 0.85;
+    will-change: transform;
     -webkit-mask-image: linear-gradient(to top, #000 55%, transparent 100%);
     mask-image: linear-gradient(to top, #000 55%, transparent 100%);
   }
@@ -52,6 +53,15 @@
     background: radial-gradient(ellipse 80% 50% at 50% 110%, rgba(255,200,140,0.18) 0%, transparent 60%);
   }
   .content { position: relative; z-index: 2; max-width: 1280px; margin: 0 auto; width: 100%; }
+  .enter > * {
+    animation: enterUp 1s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+  }
+  .enter > *:nth-child(1) { animation-delay: 0.1s; }
+  .enter > *:nth-child(2) { animation-delay: 0.25s; }
+  @keyframes enterUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
   h1 {
     font-family: var(--font-sans); font-weight: 500;
     font-size: clamp(48px, 7.5vw, 124px); line-height: 0.95;

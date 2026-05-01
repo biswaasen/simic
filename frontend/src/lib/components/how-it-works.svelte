@@ -9,12 +9,12 @@
 
 <section class="how" id="how">
   <div class="inner">
-    <div class="head">
+    <div class="head" data-reveal>
       <span class="label">// HOW IT WORKS</span>
       <h2><em>Autonomous</em> by design.</h2>
     </div>
 
-    <div class="track">
+    <div class="track" data-reveal-stagger>
       {#each steps as s, i (s.num)}
         <article class="step">
           <div class="top">

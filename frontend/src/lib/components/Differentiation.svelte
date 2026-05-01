@@ -8,14 +8,14 @@
 
 <section class="diff">
   <div class="inner">
-    <div class="head">
+    <div class="head" data-reveal>
       <span class="label">// CATEGORY</span>
       <h2>
         A new <em>category</em>.<br />Nothing before compares.
       </h2>
     </div>
 
-    <div class="list">
+    <div class="list" data-reveal-stagger>
       {#each nots as n (n.label)}
         <div class="row">
           <span class="x">✕</span>
@@ -27,7 +27,7 @@
       {/each}
     </div>
 
-    <div class="we-are">
+    <div class="we-are" data-reveal>
       <span class="we-label">// WHAT WE ARE</span>
       <p class="statement">
         An autonomous business operating <em>layer</em>. You define the

@@ -11,14 +11,14 @@
 
 <section class="proof" id="proof">
   <div class="inner">
-    <div class="head">
+    <div class="head" data-reveal>
       <span class="label">// PROOF</span>
       <h2>
         Enterprise infra.<br /><em>Startup</em> velocity.
       </h2>
     </div>
 
-    <div class="bento">
+    <div class="bento" data-reveal-stagger>
       {#each stats as s (s.label)}
         <article class="cell" class:dark={s.dark} class:lg={s.size === 'lg'}>
           <span class="cell-label">// {s.label.toUpperCase()}</span>

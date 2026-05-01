@@ -8,7 +8,7 @@
 
 <section class="problem" id="problem">
   <div class="inner">
-    <div class="head">
+    <div class="head" data-reveal>
       <span class="label">// THE PROBLEM</span>
       <h2>
         Operations are<br /><em>structurally</em> broken.
@@ -19,7 +19,7 @@
         of executing.
       </p>
     </div>
-    <div class="grid">
+    <div class="grid" data-reveal-stagger>
       {#each problems as p (p.num)}
         <article class="card">
           <span class="num">{p.num}</span>

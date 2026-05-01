@@ -1,12 +1,14 @@
 <section class="solution" id="solution">
   <div class="inner">
-    <span class="label">// THE SOLUTION</span>
-    <h2>
-      Not software. Not SaaS.<br />
-      A <em>system</em>.
-    </h2>
+    <div data-reveal>
+      <span class="label">// THE SOLUTION</span>
+      <h2>
+        Not software. Not SaaS.<br />
+        A <em>system</em>.
+      </h2>
+    </div>
 
-    <div class="bento">
+    <div class="bento" data-reveal-stagger>
       <article class="cell big dark">
         <div class="cell-top">
           <span class="cell-label">// CATEGORY</span>

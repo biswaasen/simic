@@ -1,6 +1,6 @@
 <section class="cta" id="demo">
   <div class="inner">
-    <div class="card">
+    <div class="card" data-reveal>
       <div class="grid-bg"></div>
       <div class="content">
         <span class="label">// DEPLOY NOW</span>
