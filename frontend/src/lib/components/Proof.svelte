@@ -19,7 +19,7 @@
     </div>
 
     <div class="bento">
-      {#each stats as s}
+      {#each stats as s (s.label)}
         <article class="cell" class:dark={s.dark} class:lg={s.size === 'lg'}>
           <span class="cell-label">// {s.label.toUpperCase()}</span>
           <div class="value">

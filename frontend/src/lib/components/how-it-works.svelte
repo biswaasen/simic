@@ -15,7 +15,7 @@
     </div>
 
     <div class="track">
-      {#each steps as s, i}
+      {#each steps as s, i (s.num)}
         <article class="step">
           <div class="top">
             <span class="num">{s.num}</span>

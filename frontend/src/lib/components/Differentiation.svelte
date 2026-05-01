@@ -16,7 +16,7 @@
     </div>
 
     <div class="list">
-      {#each nots as n}
+      {#each nots as n (n.label)}
         <div class="row">
           <span class="x">✕</span>
           <div class="row-content">

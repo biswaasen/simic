@@ -18,11 +18,11 @@
           Build <em>something</em><br />that runs without you.
         </p>
       </div>
-      {#each cols as col}
+      {#each cols as col (col.title)}
         <div class="col">
           <h4>{col.title}</h4>
           <ul>
-            {#each col.links as l}
+            {#each col.links as l (l)}
               <li><a href="/{l.toLowerCase()}">{l}</a></li>
             {/each}
           </ul>

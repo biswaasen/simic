@@ -14,7 +14,7 @@
       <span>SIMIC</span>
     </a>
     <ul>
-      {#each links as l}
+      {#each links as l (l.href)}
         <li><a href={l.href}>{l.label}</a></li>
       {/each}
     </ul>

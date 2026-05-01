@@ -19,7 +19,7 @@
     </div>
 
     <div class="grid">
-      {#each cases as c}
+      {#each cases as c (`${c.tag}-${c.title}`)}
         <article class="card" class:dark={c.dark}>
           <div class="card-top">
             <span class="tag">{c.tag}</span>

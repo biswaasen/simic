@@ -20,7 +20,7 @@
       </p>
     </div>
     <div class="grid">
-      {#each problems as p}
+      {#each problems as p (p.num)}
         <article class="card">
           <span class="num">{p.num}</span>
           <h3>{p.title}</h3>

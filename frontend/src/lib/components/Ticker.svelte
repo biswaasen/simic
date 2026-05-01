@@ -14,7 +14,7 @@
 <div class="ticker-wrap">
   <span class="label">// TRUSTED INFRASTRUCTURE</span>
   <div class="track">
-    {#each [...items, ...items] as item}
+    {#each [...items, ...items] as item, i (`${item}-${i}`)}
       <span class="item">
         <span class="bullet">◆</span>
         {item}

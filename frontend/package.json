@@ -6,11 +6,20 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "check:svelte": "svelte-check --tsconfig ./jsconfig.json",
+    "check": "npm run check:svelte && npm run lint"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@sveltejs/vite-plugin-svelte": "^7.0.0",
+    "eslint": "^10.3.0",
+    "eslint-plugin-svelte": "^3.17.1",
+    "globals": "^17.6.0",
     "svelte": "^5.55.4",
+    "svelte-check": "^4.4.7",
     "vite": "^8.0.10"
   }
 }
