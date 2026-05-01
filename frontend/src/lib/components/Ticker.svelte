@@ -12,7 +12,6 @@
 </script>
 
 <div class="ticker-wrap">
-  <span class="label">// TRUSTED INFRASTRUCTURE</span>
   <div class="track">
     {#each [...items, ...items] as item, i (`${item}-${i}`)}
       <span class="item">
@@ -28,21 +27,9 @@
     position: relative;
     overflow: hidden;
     background: var(--bg);
-    padding: 32px 0;
+    padding: 22px 0;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
-  }
-  .label {
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--bg);
-    padding: 0 16px;
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--muted-2);
-    letter-spacing: 1px;
   }
   .track {
     display: flex;

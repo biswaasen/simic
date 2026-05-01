@@ -11,7 +11,6 @@
     <div class="top">
       <div class="brand">
         <div class="logo-row">
-          <span class="dot"></span>
           <span class="logo">SIMIC</span>
         </div>
         <p class="tagline">
@@ -43,7 +42,6 @@
   .top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 64px; border-bottom: 1px solid var(--border); }
   .brand { display: flex; flex-direction: column; gap: 24px; max-width: 360px; }
   .logo-row { display: flex; align-items: center; gap: 10px; }
-  .dot { width: 22px; height: 12px; border-radius: 999px; background: var(--ink); }
   .logo { font-family: var(--font-mono); font-size: 14px; font-weight: 600; letter-spacing: 2px; color: var(--ink); }
   .tagline {
     font-family: var(--font-mono); font-weight: 500;

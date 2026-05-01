@@ -13,14 +13,10 @@
           who've stopped pretending tools are infrastructure.
         </p>
         <div class="actions">
-          <a href="mailto:hello@simic.ai" class="btn-primary">
-            <span class="dot"></span>
-            Book a Demo
-          </a>
+          <a href="mailto:hello@simic.ai" class="btn-primary">Book a Demo</a>
           <a href="#how" class="btn-ghost">See architecture →</a>
         </div>
         <div class="urgency">
-          <span class="live"></span>
           <span class="urgency-text">3 enterprise slots remaining this quarter</span>
         </div>
       </div>
@@ -52,17 +48,14 @@
   .content p { font-size: 17px; color: rgba(255,255,255,0.65); line-height: 1.6; max-width: 540px; margin-bottom: 40px; }
   .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px; }
   .btn-primary {
-    display: inline-flex; align-items: center; gap: 10px;
-    padding: 14px 22px 14px 16px; background: #fff; color: var(--ink);
+    display: inline-flex; align-items: center;
+    padding: 14px 22px; background: #fff; color: var(--ink);
     border-radius: 999px; font-size: 14px; font-weight: 500;
     transition: transform 0.2s;
   }
   .btn-primary:hover { transform: translateY(-1px); }
-  .btn-primary .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ink); }
   .btn-ghost { padding: 14px 22px; color: #fff; font-size: 14px; font-weight: 500; opacity: 0.7; }
   .btn-ghost:hover { opacity: 1; }
-  .urgency { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 12px; color: rgba(255,255,255,0.55); letter-spacing: 0.5px; }
-  .live { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; animation: pulse 2s ease-in-out infinite; }
-  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+  .urgency { font-family: var(--font-mono); font-size: 12px; color: rgba(255,255,255,0.55); letter-spacing: 0.5px; }
   @media (max-width: 768px) { .card { padding: 60px 28px; } .cta { padding: 0 20px 80px; } }
 </style>
