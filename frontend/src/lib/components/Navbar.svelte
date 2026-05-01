@@ -1,81 +1,104 @@
 <script>
   const links = [
-    { label: 'Works', href: '#works' },
-    { label: 'Services', href: '#services' },
-    { label: 'Insights', href: '#insights' },
+    { label: 'Platform', href: '#solution' },
+    { label: 'Workflows', href: '#cases' },
+    { label: 'Proof', href: '#proof' },
     { label: 'Pricing', href: '#pricing' },
   ];
 </script>
 
-<nav>
-  <a href="/" class="logo">SIMIC</a>
-  <ul>
-    {#each links as l}
-      <li><a href={l.href}>{l.label}</a></li>
-    {/each}
-  </ul>
-  <a href="#demo" class="cta">Book Demo</a>
-</nav>
+<header>
+  <nav>
+    <a href="/" class="logo">
+      <span class="dot"></span>
+      <span>SIMIC</span>
+    </a>
+    <ul>
+      {#each links as l}
+        <li><a href={l.href}>{l.label}</a></li>
+      {/each}
+    </ul>
+    <a href="#demo" class="cta">
+      <span class="cta-icon">→</span>
+      <span>Book Demo</span>
+    </a>
+  </nav>
+</header>
 
 <style>
-  nav {
+  header {
     position: fixed;
-    inset: 0 0 auto 0;
+    inset: 16px 16px auto 16px;
     z-index: 100;
+  }
+  nav {
+    max-width: 1180px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 48px;
-    background: rgba(8, 8, 8, 0.85);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--border);
+    padding: 8px 8px 8px 20px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 24px rgba(0, 0, 0, 0.04);
   }
   .logo {
-    font-size: 15px;
-    font-weight: 800;
-    letter-spacing: 5px;
-    color: var(--text);
-    text-decoration: none;
-    font-family: var(--mono);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--ink);
+  }
+  .dot {
+    width: 22px;
+    height: 12px;
+    border-radius: 999px;
+    background: var(--ink);
   }
   ul {
     display: flex;
-    gap: 36px;
+    gap: 28px;
     list-style: none;
     margin: 0;
     padding: 0;
   }
   ul a {
     color: var(--muted);
-    text-decoration: none;
-    font-size: 13px;
-    letter-spacing: 0.5px;
+    font-size: 14px;
     transition: color 0.2s;
   }
   ul a:hover {
-    color: var(--text);
+    color: var(--ink);
   }
   .cta {
-    padding: 9px 22px;
-    background: var(--text);
-    color: #080808;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: opacity 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px 10px 10px;
+    background: var(--ink);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 999px;
+    transition: transform 0.2s;
   }
-  .cta:hover {
-    opacity: 0.85;
+  .cta-icon {
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    color: var(--ink);
+    border-radius: 999px;
+    font-size: 12px;
   }
-  @media (max-width: 768px) {
-    nav {
-      padding: 16px 24px;
-    }
-    ul {
-      display: none;
-    }
-  }
+  .cta:hover { transform: translateY(-1px); }
+  @media (max-width: 768px) { ul { display: none; } }
 </style>

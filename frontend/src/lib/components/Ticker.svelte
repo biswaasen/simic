@@ -1,54 +1,68 @@
 <script>
   const items = [
-    'ENTERPRISE-GRADE INFRASTRUCTURE',
-    '10,000+ WORKFLOWS EXECUTED',
-    'SOC2-READY ARCHITECTURE',
+    'ENTERPRISE INFRASTRUCTURE',
+    '10K+ WORKFLOWS EXECUTED',
+    'SOC2 READY',
     'SUB-100MS INFERENCE',
-    'ZERO MANUAL HANDOFFS',
-    'AUTONOMOUS PIPELINE EXECUTION',
-    'GOAL-DRIVEN INTELLIGENCE',
+    'ZERO HANDOFFS',
+    'AUTONOMOUS PIPELINES',
+    'GOAL-DRIVEN AGENTS',
     'CONTINUOUS OPERATION',
   ];
 </script>
 
 <div class="ticker-wrap">
+  <span class="label">// TRUSTED INFRASTRUCTURE</span>
   <div class="track">
     {#each [...items, ...items] as item}
-      <span class="item">{item}<span class="sep"> // </span></span>
+      <span class="item">
+        <span class="bullet">◆</span>
+        {item}
+      </span>
     {/each}
   </div>
 </div>
 
 <style>
   .ticker-wrap {
+    position: relative;
     overflow: hidden;
+    background: var(--bg);
+    padding: 32px 0;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
-    background: #080808;
-    padding: 14px 0;
+  }
+  .label {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg);
+    padding: 0 16px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--muted-2);
+    letter-spacing: 1px;
   }
   .track {
     display: flex;
     width: max-content;
-    animation: scroll 32s linear infinite;
+    animation: scroll 40s linear infinite;
+    gap: 40px;
   }
   .item {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 2.5px;
-    color: var(--muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--ink);
     white-space: nowrap;
-    padding: 0 4px;
   }
-  .sep {
-    color: var(--border-bright);
-  }
+  .bullet { color: var(--muted-2); font-size: 8px; }
   @keyframes scroll {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-50%);
-    }
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
   }
 </style>

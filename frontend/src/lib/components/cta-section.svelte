@@ -1,120 +1,68 @@
 <section class="cta" id="demo">
   <div class="inner">
-    <div class="marquee">DEPLOY NOW &nbsp;// DEPLOY NOW &nbsp;// DEPLOY NOW &nbsp;//</div>
-    <h2>Stop managing process.<br />Start shipping outcomes.</h2>
-    <p>
-      Join the operators who've replaced entire workflow teams with a single
-      deployment. We don't do free trials. We do production systems.
-    </p>
-    <div class="actions">
-      <a href="mailto:hello@simic.ai" class="btn-primary">Book a Demo</a>
-      <a href="#how" class="btn-ghost">See the Architecture</a>
-    </div>
-    <div class="urgency">
-      <span class="dot-live"></span>
-      <span>3 enterprise slots available this quarter</span>
+    <div class="card">
+      <div class="grid-bg"></div>
+      <div class="content">
+        <span class="label">// DEPLOY NOW</span>
+        <h2>
+          Stop managing process.<br />
+          Start shipping <em>outcomes</em>.
+        </h2>
+        <p>
+          We don't sell free trials. We deploy production systems for operators
+          who've stopped pretending tools are infrastructure.
+        </p>
+        <div class="actions">
+          <a href="mailto:hello@simic.ai" class="btn-primary">
+            <span class="dot"></span>
+            Book a Demo
+          </a>
+          <a href="#how" class="btn-ghost">See architecture →</a>
+        </div>
+        <div class="urgency">
+          <span class="live"></span>
+          <span class="urgency-text">3 enterprise slots remaining this quarter</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <style>
-  .cta {
-    background: #080808;
-    padding: 160px 48px;
-    border-top: 1px solid var(--border);
-    text-align: center;
+  .cta { padding: 0 24px 120px; }
+  .inner { max-width: 1180px; margin: 0 auto; }
+  .card {
+    position: relative; overflow: hidden;
+    background: var(--ink); color: #fff;
+    border-radius: var(--radius-lg);
+    padding: 96px 64px;
+    box-shadow: 0 30px 80px -30px rgba(0,0,0,0.4);
   }
-  .inner {
-    max-width: 800px;
-    margin: 0 auto;
+  .grid-bg {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, #000 30%, transparent 80%);
   }
-  .marquee {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 4px;
-    color: var(--border);
-    margin-bottom: 52px;
-  }
-  h2 {
-    font-size: clamp(36px, 6vw, 72px);
-    font-weight: 800;
-    letter-spacing: -2.5px;
-    color: var(--text);
-    margin: 0 0 24px;
-    line-height: 1;
-  }
-  p {
-    font-size: 16px;
-    color: var(--muted);
-    line-height: 1.75;
-    max-width: 520px;
-    margin: 0 auto 52px;
-  }
-  .actions {
-    display: flex;
-    gap: 14px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-  }
+  .content { position: relative; max-width: 720px; }
+  .label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 1.5px; color: rgba(255,255,255,0.5); display: block; margin-bottom: 28px; }
+  h2 { font-family: var(--font-mono); font-weight: 500; font-size: clamp(40px, 6vw, 88px); line-height: 0.95; letter-spacing: -2.5px; color: #fff; margin-bottom: 28px; }
+  h2 em { font-family: var(--font-serif); font-style: italic; font-weight: 400; }
+  .content p { font-size: 17px; color: rgba(255,255,255,0.65); line-height: 1.6; max-width: 540px; margin-bottom: 40px; }
+  .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px; }
   .btn-primary {
-    padding: 16px 40px;
-    background: var(--text);
-    color: #080808;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: opacity 0.2s;
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 22px 14px 16px; background: #fff; color: var(--ink);
+    border-radius: 999px; font-size: 14px; font-weight: 500;
+    transition: transform 0.2s;
   }
-  .btn-primary:hover {
-    opacity: 0.85;
-  }
-  .btn-ghost {
-    padding: 16px 40px;
-    border: 1px solid var(--border-bright);
-    color: var(--muted);
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: color 0.2s, border-color 0.2s;
-  }
-  .btn-ghost:hover {
-    color: var(--text);
-    border-color: #444;
-  }
-  .urgency {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    justify-content: center;
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--muted);
-    letter-spacing: 0.5px;
-  }
-  .dot-live {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #22c55e;
-    display: inline-block;
-    animation: pulse 2s ease-in-out infinite;
-  }
-  @keyframes pulse {
-    0%,
-    100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.25;
-    }
-  }
-  @media (max-width: 768px) {
-    .cta {
-      padding: 100px 24px;
-    }
-  }
+  .btn-primary:hover { transform: translateY(-1px); }
+  .btn-primary .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ink); }
+  .btn-ghost { padding: 14px 22px; color: #fff; font-size: 14px; font-weight: 500; opacity: 0.7; }
+  .btn-ghost:hover { opacity: 1; }
+  .urgency { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 12px; color: rgba(255,255,255,0.55); letter-spacing: 0.5px; }
+  .live { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+  @media (max-width: 768px) { .card { padding: 60px 28px; } .cta { padding: 0 20px 80px; } }
 </style>

@@ -1,10 +1,8 @@
 <script>
-  const links = [
-    { label: 'Works', href: '#works' },
-    { label: 'Services', href: '#services' },
-    { label: 'Insights', href: '#insights' },
-    { label: 'Pricing', href: '#pricing' },
-    { label: 'Contact', href: 'mailto:hello@simic.ai' },
+  const cols = [
+    { title: 'Platform',  links: ['Architecture', 'Workflows', 'Integrations', 'Security'] },
+    { title: 'Company',   links: ['About', 'Engineering', 'Careers', 'Contact'] },
+    { title: 'Resources', links: ['Docs', 'Changelog', 'Status', 'Blog'] },
   ];
 </script>
 
@@ -12,108 +10,55 @@
   <div class="inner">
     <div class="top">
       <div class="brand">
-        <span class="logo">SIMIC</span>
-        <span class="tagline">Autonomous Intelligence Infrastructure</span>
+        <div class="logo-row">
+          <span class="dot"></span>
+          <span class="logo">SIMIC</span>
+        </div>
+        <p class="tagline">
+          Build <em>something</em><br />that runs without you.
+        </p>
       </div>
-      <nav>
-        {#each links as l}
-          <a href={l.href}>{l.label}</a>
-        {/each}
-      </nav>
+      {#each cols as col}
+        <div class="col">
+          <h4>{col.title}</h4>
+          <ul>
+            {#each col.links as l}
+              <li><a href="/{l.toLowerCase()}">{l}</a></li>
+            {/each}
+          </ul>
+        </div>
+      {/each}
     </div>
+
     <div class="bottom">
-      <span class="copy">© 2025 SIMIC. All rights reserved.</span>
-      <span class="mono">// BUILD SOMETHING THAT RUNS WITHOUT YOU</span>
+      <span class="copy">© 2026 Simic Labs Inc.</span>
+      <span class="mono">v4.0 // AUTONOMOUS · GLOBAL · CONTINUOUS</span>
     </div>
   </div>
 </footer>
 
 <style>
-  footer {
-    background: #080808;
-    border-top: 1px solid var(--border);
-    padding: 52px 48px;
-  }
-  .inner {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  .top {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 48px;
-    padding-bottom: 48px;
-    border-bottom: 1px solid var(--border);
-  }
-  .brand {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .logo {
-    font-family: var(--mono);
-    font-size: 14px;
-    font-weight: 800;
-    letter-spacing: 5px;
-    color: var(--text);
-  }
+  footer { background: var(--bg); border-top: 1px solid var(--border); padding: 80px 24px 32px; }
+  .inner { max-width: 1180px; margin: 0 auto; }
+  .top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 64px; border-bottom: 1px solid var(--border); }
+  .brand { display: flex; flex-direction: column; gap: 24px; max-width: 360px; }
+  .logo-row { display: flex; align-items: center; gap: 10px; }
+  .dot { width: 22px; height: 12px; border-radius: 999px; background: var(--ink); }
+  .logo { font-family: var(--font-mono); font-size: 14px; font-weight: 600; letter-spacing: 2px; color: var(--ink); }
   .tagline {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 1.5px;
-    color: var(--muted-dim);
-    text-transform: uppercase;
+    font-family: var(--font-mono); font-weight: 500;
+    font-size: 28px; line-height: 1.15; letter-spacing: -1px; color: var(--ink);
   }
-  nav {
-    display: flex;
-    gap: 32px;
-    align-items: center;
-  }
-  nav a {
-    font-size: 13px;
-    color: var(--muted);
-    text-decoration: none;
-    letter-spacing: 0.5px;
-    transition: color 0.2s;
-  }
-  nav a:hover {
-    color: var(--text);
-  }
-  .bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-  .copy {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--border-bright);
-    letter-spacing: 0.5px;
-  }
-  .mono {
-    font-family: var(--mono);
-    font-size: 10px;
-    color: var(--border-bright);
-    letter-spacing: 1.5px;
-  }
+  .tagline em { font-family: var(--font-serif); font-style: italic; font-weight: 400; }
+  .col h4 { font-family: var(--font-mono); font-size: 11px; letter-spacing: 1.5px; color: var(--muted-2); margin-bottom: 20px; text-transform: uppercase; }
+  .col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
+  .col a { font-size: 14px; color: var(--ink); transition: opacity 0.2s; }
+  .col a:hover { opacity: 0.6; }
+  .bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; padding-top: 32px; }
+  .copy, .mono { font-family: var(--font-mono); font-size: 11px; color: var(--muted-2); letter-spacing: 0.5px; }
   @media (max-width: 768px) {
-    footer {
-      padding: 40px 24px;
-    }
-    .top {
-      flex-direction: column;
-      gap: 32px;
-    }
-    nav {
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-    .bottom {
-      flex-direction: column;
-      align-items: flex-start;
-    }
+    footer { padding: 60px 20px 24px; }
+    .top { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .brand { grid-column: span 2; }
   }
 </style>

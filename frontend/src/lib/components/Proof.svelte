@@ -1,97 +1,72 @@
 <script>
   const stats = [
-    { value: '10,000+', label: 'Workflows Executed' },
-    { value: '$2.4B', label: 'Pipeline Influenced' },
-    { value: '99.97%', label: 'Uptime SLA' },
-    { value: '<100ms', label: 'Inference Latency' },
-    { value: '40+', label: 'Native Integrations' },
-    { value: '6x', label: 'Avg Team Leverage' },
+    { value: '10K+',    label: 'Workflows Executed',  size: 'lg' },
+    { value: '$2.4B',   label: 'Pipeline Influenced', size: 'sm', dark: true },
+    { value: '99.97',   suffix: '%', label: 'Uptime SLA',       size: 'sm' },
+    { value: '<100',    suffix: 'ms', label: 'Inference Latency', size: 'sm' },
+    { value: '6x',      label: 'Avg Team Leverage',   size: 'sm', dark: true },
+    { value: '40+',     label: 'Native Integrations', size: 'sm' },
   ];
 </script>
 
-<section class="proof" id="insights">
+<section class="proof" id="proof">
   <div class="inner">
-    <span class="label">// PROOF</span>
-    <p class="headline">
-      Enterprise-grade infrastructure.<br />Startup-grade velocity.
-    </p>
-    <div class="grid">
+    <div class="head">
+      <span class="label">// PROOF</span>
+      <h2>
+        Enterprise infra.<br /><em>Startup</em> velocity.
+      </h2>
+    </div>
+
+    <div class="bento">
       {#each stats as s}
-        <div class="stat">
-          <span class="value">{s.value}</span>
-          <span class="stat-label">{s.label}</span>
-        </div>
+        <article class="cell" class:dark={s.dark} class:lg={s.size === 'lg'}>
+          <span class="cell-label">// {s.label.toUpperCase()}</span>
+          <div class="value">
+            {s.value}{#if s.suffix}<span class="suffix">{s.suffix}</span>{/if}
+          </div>
+          <span class="cell-foot">{s.label}</span>
+        </article>
       {/each}
     </div>
   </div>
 </section>
 
 <style>
-  .proof {
-    background: #080808;
-    padding: 120px 48px;
-    border-top: 1px solid var(--border);
+  .proof { padding: 0 24px 120px; }
+  .inner { max-width: 1180px; margin: 0 auto; }
+  .head { margin-bottom: 56px; }
+  .label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 1.5px; color: var(--muted); display: block; margin-bottom: 24px; }
+  h2 { font-family: var(--font-mono); font-weight: 500; font-size: clamp(40px, 5.5vw, 84px); line-height: 0.95; letter-spacing: -2.5px; color: var(--ink); }
+  h2 em { font-family: var(--font-serif); font-style: italic; font-weight: 400; }
+  .bento { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .cell {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 28px;
+    display: flex; flex-direction: column; gap: 12px;
+    min-height: 220px; transition: border-color 0.2s, transform 0.2s;
   }
-  .inner {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  .label {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 2px;
-    color: var(--muted);
-    display: block;
-    margin-bottom: 24px;
-  }
-  .headline {
-    font-size: clamp(28px, 4vw, 48px);
-    font-weight: 800;
-    letter-spacing: -1.5px;
-    color: var(--text);
-    line-height: 1.1;
-    margin: 0 0 72px;
-  }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 1px;
-    background: var(--border);
-  }
-  .stat {
-    background: #080808;
-    padding: 36px 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
+  .cell:hover { border-color: var(--border-strong); transform: translateY(-2px); }
+  .lg { grid-column: span 2; }
+  .dark { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .cell-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 1.5px; color: var(--muted-2); text-transform: uppercase; }
+  .dark .cell-label { color: rgba(255,255,255,0.5); }
   .value {
-    font-size: clamp(26px, 3vw, 38px);
-    font-weight: 800;
-    color: var(--text);
-    letter-spacing: -1px;
-    font-family: var(--mono);
-    line-height: 1;
+    font-family: var(--font-mono); font-weight: 500;
+    font-size: clamp(48px, 6vw, 80px); letter-spacing: -3px;
+    line-height: 1; margin-top: auto; color: var(--ink);
   }
-  .stat-label {
-    font-size: 10px;
-    color: var(--muted);
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    font-family: var(--mono);
-    line-height: 1.5;
+  .dark .value { color: #fff; }
+  .lg .value { font-size: clamp(72px, 9vw, 132px); }
+  .suffix {
+    font-family: var(--font-serif); font-style: italic; font-weight: 400;
+    font-size: 0.55em; margin-left: 2px; letter-spacing: 0;
   }
-  @media (max-width: 1024px) {
-    .grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-  @media (max-width: 600px) {
-    .proof {
-      padding: 80px 24px;
-    }
-    .grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  .cell-foot { font-size: 13px; color: var(--muted); }
+  .dark .cell-foot { color: rgba(255,255,255,0.55); }
+  @media (max-width: 900px) {
+    .bento { grid-template-columns: 1fr 1fr; }
+    .lg { grid-column: span 2; }
+    .proof { padding: 0 20px 80px; }
   }
 </style>
