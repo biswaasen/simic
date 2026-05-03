@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte';
+  import { goto } from '../router.js';
 
   const links = [
     { label: 'Platform', href: '#solution' },
@@ -22,7 +23,7 @@
 
 <header class="header" class:scrolled>
   <div class="left">
-    <a href="/" class="brand">SIMIC</a>
+    <a href="/" class="brand" on:click|preventDefault={() => goto('/')}>SIMIC</a>
     <span class="div"></span>
     <nav>
       {#each links as l (l.href)}
@@ -31,10 +32,13 @@
     </nav>
   </div>
 
-  <a href="#demo" class="cta">
-    <span>Book Demo</span>
-    <span class="arr">→</span>
-  </a>
+  <div class="right">
+    <a href="/login" class="signin" on:click|preventDefault={() => goto('/login')}>Sign in</a>
+    <a href="#demo" class="cta">
+      <span>Book Demo</span>
+      <span class="arr">→</span>
+    </a>
+  </div>
 </header>
 
 <style>
@@ -81,6 +85,13 @@
     transition: background 0.3s, color 0.3s;
   }
 
+  .right { display: inline-flex; align-items: center; gap: 14px; }
+  .signin {
+    font-size: 13.5px; color: rgba(255, 255, 255, 0.85);
+    padding: 8px 14px; transition: color 0.2s;
+  }
+  .signin:hover { color: #fff; }
+
   .scrolled .left { background: rgba(255, 255, 255, 0.7); border-color: rgba(0, 0, 0, 0.06); }
   .scrolled .brand { color: var(--ink); }
   .scrolled .div { background: rgba(0, 0, 0, 0.12); }
@@ -88,6 +99,8 @@
   .scrolled nav a:hover { color: var(--ink); }
   .scrolled .cta { background: var(--ink); color: #fff; border-color: var(--ink); }
   .scrolled .arr { background: #fff; color: var(--ink); }
+  .scrolled .signin { color: var(--muted); }
+  .scrolled .signin:hover { color: var(--ink); }
 
-  @media (max-width: 800px) { nav, .div { display: none; } }
+  @media (max-width: 800px) { nav, .div, .signin { display: none; } }
 </style>
